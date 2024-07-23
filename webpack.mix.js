@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-const WebpackShellPlugin = require('webpack-shell-plugin');
+const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 const WebpackMildCompile = require('webpack-mild-compile').Plugin;
 const themeInfo = require('./theme.json');
 
@@ -9,7 +9,9 @@ mix.webpackConfig({
   },
   plugins: [
     new WebpackMildCompile(), // See: https://github.com/webpack/watchpack/issues/25.
-    new WebpackShellPlugin({onBuildEnd: ['/usr/local/lsws/lsphp81/bin/php ../../artisan stylist:publish ' + themeInfo.name]})
+    new WebpackShellPluginNext({
+      onBuildEnd: ['/usr/local/lsws/lsphp81/bin/php ../../artisan stylist:publish ' + themeInfo.name]
+    })
   ]
 });
 
@@ -63,7 +65,6 @@ mix.copy(
  * Concat scripts
  */
 mix.scripts([
-  'node_modules/popper.js/dist/umd/popper.min.js',
   'node_modules/bootstrap/dist/js/bootstrap.min.js',
   'node_modules/owl.carousel/dist/owl.carousel.min.js',
   'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'
