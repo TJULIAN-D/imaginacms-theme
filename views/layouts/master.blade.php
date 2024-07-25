@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     @yield('meta')
+    <!--Comments-->
+    @if(Setting::has('isite::facebookAppId'))
+        <meta property="fb:app_id" content="{{Setting::get('isite::facebookAppId') }}">
+    @endif
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <title>@section('title')@setting('core::site-name')@show</title>
