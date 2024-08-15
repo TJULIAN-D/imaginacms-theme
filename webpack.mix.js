@@ -67,7 +67,8 @@ mix.copy(
 mix.scripts([
   'node_modules/bootstrap/dist/js/bootstrap.min.js',
   'node_modules/owl.carousel/dist/owl.carousel.min.js',
-  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'
+  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+  'resources/js/sharethis.js'
 ], 'assets/js/secondary.js')
   .scripts([
     'resources/js/app.js',
