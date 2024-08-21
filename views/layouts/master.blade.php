@@ -36,9 +36,20 @@
 <body>
 
 <div id="page-wrapper">
-    @include('partials.header')
+    @include('partials.variables')
+    {{--    @include('partials.header')--}}
+    <x-ibuilder::layout
+      entityType="Modules\\Ibuilder\\Entities\\Layout"
+      type="header"
+      alternativeView="partials.header"
+    />
     @yield('content')
-    @include('partials.footer')
+    {{--    @include('partials.footer')--}}
+    <x-ibuilder::layout
+      entityType="Modules\\Ibuilder\\Entities\\Layout"
+      type="footer"
+      alternativeView="partials.footer"
+    />
 </div>
 
 
